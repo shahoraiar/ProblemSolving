@@ -6,11 +6,14 @@ class Solution:
         
         for i, num in enumerate(nums):
             complement = target - num
+            print('i : ', i, 'num : ', num, 'compement : ', complement)
             
             if complement in seen:
+                print('if seen[num] : ', seen)
                 return [seen[complement], i]
             
             seen[num] = i
+            print('seen[num] : ', seen)
             
 num = eval(input())
 target = eval(input())
@@ -20,6 +23,5 @@ target = eval(input())
 sol = Solution()
 result = sol.twoSum(num , target)
 
-print(result)
 
 
