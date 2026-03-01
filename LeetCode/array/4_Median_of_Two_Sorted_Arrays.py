@@ -2,11 +2,13 @@
 
 class Solution:
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
-        marge = nums1 + nums2
-        marge = sorted(marge)
+        marg = []
+        marg.extend(nums1)
+        marg.extend(nums2)
+        marge = sorted(marg)
+
         if len(marge)%2 == 0:
             middle = (marge[int(len(marge)/2)] + marge[int(len(marge)/2) - 1]) / 2
-
             return middle
         else:
             return marge[int(len(marge)/2)]
@@ -14,15 +16,15 @@ class Solution:
 obj = Solution()
 print(obj.findMedianSortedArrays([1,2], [3,4]))
 
-def findMedianSortedArrays(num1:list[int], num2:list[int]) -> float:
-    marge = num1 + num2
-    marge = sorted(marge)
-    if len(marge)%2 == 0:
-        middle = (marge[int(len(marge)/2)] + marge[int(len(marge)/2) - 1]) / 2
-        return middle
-    else:
-        return marge[int(len(marge)/2)]
+# def findMedianSortedArrays(num1:list[int], num2:list[int]) -> float:
+#     marge = num1 + num2
+#     marge = sorted(marge)
+#     if len(marge)%2 == 0:
+#         middle = (marge[int(len(marge)/2)] + marge[int(len(marge)/2) - 1]) / 2
+#         return middle
+#     else:
+#         return marge[int(len(marge)/2)]
 
-print(findMedianSortedArrays([1,2], [3,4]))
+# print(findMedianSortedArrays([1,2], [3,4]))
 
 
